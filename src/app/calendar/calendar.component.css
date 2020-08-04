@@ -7,3 +7,16 @@ td, th {
     bottom: 1px solid #000000;
     padding: .5rem 1rem;
 }
+
+td{
+    text-align: center;
+}
+
+td:disabled {
+    opacity: .5;
+}
+
+td:hover:not(.disabled){
+    background: #eee;
+    cursor: pointer;
+}
