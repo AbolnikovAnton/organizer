@@ -1,15 +1,17 @@
 table{
     width: 100%;
     margin-bottom: 1rem;
+    border-collapse: collapse;
 }
 
 td, th {
-    bottom: 1px solid #000000;
+    border: 1px solid black;
     padding: .5rem 1rem;
 }
 
 td{
     text-align: center;
+    transition: all .2s;
 }
 
 td:disabled {
@@ -19,4 +21,14 @@ td:disabled {
 td:hover:not(.disabled){
     background: #eee;
     cursor: pointer;
+}
+
+.active{
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.selected{
+    color: blue;
+    font-weight: bold;
 }
