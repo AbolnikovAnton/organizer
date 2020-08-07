@@ -29,6 +29,6 @@ td:hover:not(.disabled){
 }
 
 .selected{
-    color: blue;
+    color: cornflowerblue;
     font-weight: bold;
 }
