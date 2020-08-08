@@ -19,7 +19,7 @@ td:disabled {
 }
 
 td:hover:not(.disabled){
-    background: #eee;
+    background: rgb(209, 209, 209);
     cursor: pointer;
 }
 

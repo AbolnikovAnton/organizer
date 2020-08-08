@@ -16,7 +16,9 @@ import { MomentPipe } from './shared/moment.pipe'
     MomentPipe
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
