@@ -17,8 +17,8 @@
     </main>
 
     <footer>
-        <form>
-            <input type="text">
+        <form ((ngSubmit)="onSubmit()" [[formGroup]="form"])>
+            <input type="text" formControlName="title">
 
             <button class="btn btn-primary btn-block"
                     title="submit">Add</button>
