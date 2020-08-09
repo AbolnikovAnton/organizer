@@ -11,7 +11,7 @@ export class OrganizerComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor(private dateService: DateService) { }
+  constructor(public dateService: DateService) { }
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -20,6 +20,6 @@ export class OrganizerComponent implements OnInit {
   }
 
   submit(){
-
+    const {title} = this.form.value;
   }
 }

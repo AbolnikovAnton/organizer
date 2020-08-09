@@ -17,11 +17,12 @@
     </main>
 
     <footer>
-        <form ((ngSubmit)="onSubmit()" [[formGroup]="form"])>
+        <form (ngSubmit)="submit()" [formGroup]="form">
             <input type="text" formControlName="title">
 
             <button class="btn btn-primary btn-block"
-                    title="submit">Add</button>
+                    title="submit"
+                    [disabled]="form.invalid">Add</button>
         </form>
     </footer>
 </section>
