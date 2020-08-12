@@ -25,6 +25,14 @@ export class OrganizerComponent implements OnInit {
   submit() {
     const { title } = this.form.value;
 
-    const task: Task;
+    const task: Task = {
+      title,
+      date: this.dateService.date.value.format('DD-MM-YYYY')
+    };
+
+    this.tasksService.create(task).subscribe( task => {
+
+    }, err=> console.error(err));
+    
   }
 }
