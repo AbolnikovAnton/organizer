@@ -9,6 +9,10 @@ export interface Task {
   date?: string;
 }
 
+interface Interface {
+  
+}
+
 @Injectable({ providedIn: 'root' })
 export class TasksService {
   static url = 'https://angular-calendar-7448f.firebaseio.com/tasks/';
