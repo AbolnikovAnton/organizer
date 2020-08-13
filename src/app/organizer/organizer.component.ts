@@ -27,12 +27,14 @@ export class OrganizerComponent implements OnInit {
 
     const task: Task = {
       title,
-      date: this.dateService.date.value.format('DD-MM-YYYY')
+      date: this.dateService.date.value.format('DD-MM-YYYY'),
     };
 
-    this.tasksService.create(task).subscribe( task => {
-
-    }, err=> console.error(err));
-    
+    this.tasksService.create(task).subscribe(
+      (task) => {
+        this.form.reset();
+      },
+      (err) => console.error(err)
+    );
   }
 }
