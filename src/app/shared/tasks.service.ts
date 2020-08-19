@@ -10,7 +10,7 @@ export interface Task {
 }
 
 interface Interface {
-  
+  name: string;
 }
 
 @Injectable({ providedIn: 'root' })
