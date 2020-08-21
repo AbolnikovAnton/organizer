@@ -22,7 +22,7 @@ export class OrganizerComponent implements OnInit {
     this.dateService.date.pipe(
       switchMap(value => this.tasksService.load(value))
     ).subscribe(tasks => {
-      this.tasks = tasks)
+      this.tasks = tasks
     });
 
     this.form = new FormGroup({
