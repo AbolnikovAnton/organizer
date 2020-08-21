@@ -2,6 +2,7 @@ import { TasksService, Task } from './../shared/tasks.service';
 import { Component, OnInit } from '@angular/core';
 import { DateService } from '../shared/date.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-organizer',
@@ -10,6 +11,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class OrganizerComponent implements OnInit {
   form: FormGroup;
+  tasks: Task[] = [];
 
   constructor(
     public dateService: DateService,
@@ -17,6 +19,12 @@ export class OrganizerComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.dateService.date.pipe(
+      switchMap(value => this.tasksService.load(value))
+    ).subscribe(tasks => {
+      this.tasks = tasks)
+    });
+
     this.form = new FormGroup({
       title: new FormControl('', Validators.required),
     });
